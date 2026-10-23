@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .form-container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 450px;
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-header .icon {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .form-header h1 {
+            color: #2d3748;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .form-header p {
+            color: #718096;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2d3748;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+        }
+
+        input::placeholder {
+            color: #a0aec0;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(102, 126, 234, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .footer-text {
+            margin-top: 22px;
+            text-align: center;
+            font-size: 12px;
+            color: #718096;
+        }
+
+        @media (max-width: 480px) {
+            .form-container {
+                padding: 25px 20px;
+            }
+
+            .form-header h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="form-container">
+
+        <header class="form-header">
+            <div class="icon" aria-hidden="true">📝</div>
+            <h1>Registration Form</h1>
+            <p>Please fill in your details to complete registration.</p>
+        </header>
+
+        <form id="registrationForm">
+
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your full name"
+                    autocomplete="name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email address"
+                    autocomplete="email"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="contact">Contact Number</label>
+                <input
+                    type="tel"
+                    id="contact"
+                    name="contact"
+                    placeholder="Enter your 10-digit number"
+                    pattern="[0-9]{10}"
+                    maxlength="10"
+                    inputmode="numeric"
+                    autocomplete="tel"
+                    title="Please enter exactly 10 digits"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="submit-btn">
+                Submit Registration
+            </button>
+
+        </form>
+
+        <p class="footer-text">
+            Please ensure all information is correct.
+        </p>
+
+    </main>
+
+    <script>
+        document.getElementById("registrationForm")
+            .addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                alert("Registration submitted successfully!");
+
+                this.reset();
+            });
+    </script>
+
+</body>
+</html>
